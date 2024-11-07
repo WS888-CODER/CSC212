@@ -1,7 +1,7 @@
 
 package csc212.project;
 
-
+//w
 public interface List<T>{ 
     public void findFirst( ); 
     public void findNext( ); 
