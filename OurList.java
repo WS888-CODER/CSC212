@@ -1,8 +1,7 @@
 
-package csc212.project;
 
-//w
-public interface List<T>{ 
+
+public interface OurList<T>{ 
     public void findFirst( ); 
     public void findNext( ); 
     public T retrieve( ); 

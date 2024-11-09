@@ -1,20 +1,23 @@
 
-package csc212.project;
 
 
-public class LinkedList<T> implements List<T> {
+public class OurLinkedList<T> implements OurList<T> {
     
- private Node<T> head; 
- private Node<T> current; 
+ private OurNode<T> head; 
+ private OurNode<T> current; 
 
- public LinkedList () { 
-   head = current = null; } 
+ public OurLinkedList () { 
+   head = current = null; 
+  } 
+
  public boolean empty () {
    return head == null;
 } 
+
  public boolean last () { 
    return current.next == null;   
 }
+
  public void findFirst( ) {
     current = head;
  }
@@ -32,13 +35,13 @@ public class LinkedList<T> implements List<T> {
  } 
  
  public void insert(T val) {
-     Node<T> tmp; 
+     OurNode<T> tmp; 
      if (empty()) { 
-         current = head = new Node<T> (val);
+         current = head = new OurNode<T> (val);
      } 
      else {
          tmp = current.next; 
-         current.next = new Node<T> (val); 
+         current.next = new OurNode<T> (val); 
          current = current.next; 
          current.next = tmp;
      }
@@ -49,7 +52,7 @@ public class LinkedList<T> implements List<T> {
           head = head.next; 
    } 
    else { 
-          Node<T> tmp = head; 
+          OurNode<T> tmp = head; 
           while (tmp.next != current) tmp = tmp.next; 
           tmp.next = current.next; } 
    
@@ -62,17 +65,4 @@ public class LinkedList<T> implements List<T> {
  public boolean full( ) {
    return false;  
  }
-}
-
-class Node<T> { 
-  public T data;
-  public Node<T> next;
-  
-  public Node () { 
-    data = null;
-    next = null; } 
-  
-  public Node (T val) { 
-      data = val;
-      next = null; } 
 }
